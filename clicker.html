@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    #panda{
+      text-align: center;
+      padding-top: 75px;
+      margin-left: 530px;
+    }
+     
+    #hi {
+      font-size: 50px;
+      text-align: center;
+      
+    }
+    .button {
+  border: none;
+  color: rgb(224, 53, 53);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 650px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #000000;} /* Upgrade */
+.button2 {background-color: #000000;} /* Auto */
+
+
+  </style>
+</head>
+
+<body>
+    <img id="panda"
+      src="https://images.vexels.com/media/users/3/157679/isolated/preview/8d24929b0ebd57e691ea9db331e1c1fa-youtube-play-button-logo.png"
+      width="600"
+     </img>
+
+    <p id="hi">0</p>
+    <button id="oof" type = button>Upgrade</button>
+    <button id="but" type = button>Auto</button>
+
+
+</body>
+
+</html>
+<script>
+  document.getElementById("panda").addEventListener("click", addScore)
+  document.getElementById("oof").addEventListener("click", upgrade)
+  document.getElementById("but").addEventListener("click", autoClicker)
+                                    
+  var score = 0
+  var multiplier = 1
+var cost = 20
+
+  function addScore() {
+    score = score + multiplier
+    document.getElementById("hi").innerText = score
+  }
+function upgrade(){
+  if(score>=10){
+  multiplier = multiplier + 1
+  score = score - 10   
+}
+}
+function autoClicker(){
+  if(score>=100){
+    score = score - 100
+    setInterval(addScore, 1000)
+    document.getElementById("hi").innerText = score
+  }
+}
+
+
+
+</script>
